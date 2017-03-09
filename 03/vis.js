@@ -43,6 +43,10 @@ d3.json('graph.json', (error, graph) => {
   node.append('title')
     .text(d => d.id);
 
+  d3.select('body')
+    .on('touchstart', noZoom)
+    .on('touchmove', noZoom)
+
   simulation
     .nodes(graph.nodes)
     .on('tick', ticked);
@@ -161,4 +165,8 @@ function dragended(d) {
   if (!d3.event.active) simulation.alphaTarget(0);
   d.fx = null;
   d.fy = null;
+}
+
+function noZoom() {
+  d3.event.preventDefault();
 }
