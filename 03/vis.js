@@ -142,6 +142,9 @@ d3.json('graph.json', (error, graph) => {
   svg.append('g')
     .attr('class', 'annotation-encircle')
     .call(makeAnnotations);
+
+  svg.selectAll('.annotation-subject')
+    .style('pointer-events', 'none');
 });
 
 function dragstarted(d) {
