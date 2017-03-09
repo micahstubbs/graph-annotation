@@ -37,7 +37,8 @@ d3.json('graph.json', (error, graph) => {
     .call(d3.drag()
       .on('start', dragstarted)
       .on('drag', dragged)
-      .on('end', dragended));
+      .on('end', dragended)
+    );
 
   node.append('title')
     .text(d => d.id);
