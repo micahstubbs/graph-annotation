@@ -18,7 +18,7 @@ const simulation = d3.forceSimulation()
   .force('charge', d3.forceManyBody())
   .force('center', d3.forceCenter(width / 2, height / 2));
 
-d3.json('miserables.hidden.json', (error, graph) => {
+d3.json('graph.json', (error, graph) => {
   if (error) throw error;
   const link = svg.append('g')
     .attr('class', 'links')
